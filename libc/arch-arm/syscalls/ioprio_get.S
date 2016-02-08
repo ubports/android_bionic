@@ -10,5 +10,4 @@ ENTRY(ioprio_get)
     cmn     r0, #(MAX_ERRNO + 1)
     bxls    lr
     neg     r0, r0
-    b       __set_errno
 END(ioprio_get)
