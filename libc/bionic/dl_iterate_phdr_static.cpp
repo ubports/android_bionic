@@ -33,7 +33,7 @@
 #include <link.h>
 
 /* ld provides this to us in the default link script */
-extern "C" void* __executable_start;
+extern "C" {char __executable_start;}
 
 int dl_iterate_phdr(int (*cb)(struct dl_phdr_info* info, size_t size, void* data), void* data) {
   ElfW(Ehdr)* ehdr = reinterpret_cast<ElfW(Ehdr)*>(&__executable_start);
@@ -62,7 +62,7 @@ int dl_iterate_phdr(int (*cb)(struct dl_phdr_info* info, size_t size, void* data
 
   // Try the VDSO if that didn't work.
   ElfW(Ehdr)* ehdr_vdso = reinterpret_cast<ElfW(Ehdr)*>(getauxval(AT_SYSINFO_EHDR));
-  if (ehdr_vdso == nullptr) {
+  if (ehdr_vdso == NULL) {
     // There is no VDSO, so there's nowhere left to look.
     return rc;
   }
