@@ -1004,6 +1004,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := $(libc_common_c_includes)
 LOCAL_CFLAGS := $(libc_common_cflags)
+LOCAL_CPPFLAGS := $(libc_common_cppflags)
 
 LOCAL_MODULE:= libdsyscalls
 
