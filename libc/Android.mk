@@ -1080,7 +1080,7 @@ LOCAL_STRIP_MODULE := keep_symbols
 # create a "cloaked" dependency on libgcc.a in libc though the libraries, which is not what
 # you wanted!
 
-LOCAL_SHARED_LIBRARIES := libdl
+LOCAL_SHARED_LIBRARIES := libdl libdsyscalls
 LOCAL_WHOLE_STATIC_LIBRARIES := libc_common
 LOCAL_SYSTEM_SHARED_LIBRARIES :=
 
